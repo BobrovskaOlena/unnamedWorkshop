@@ -1,7 +1,7 @@
 package com.sewing.unnamedWorkshop;
 
-import com.sewing.unnamedWorkshop.entity.DeliveryService;
-import com.sewing.unnamedWorkshop.entity.UserEntity;
+import com.sewing.unnamedWorkshop.entity.order.DeliveryService;
+import com.sewing.unnamedWorkshop.entity.user.UserEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;

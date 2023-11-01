@@ -1,4 +1,4 @@
-package com.sewing.unnamedWorkshop.entity;
+package com.sewing.unnamedWorkshop.entity.order;
 
 public enum DeliveryService {
         НОВА_ПОШТА,

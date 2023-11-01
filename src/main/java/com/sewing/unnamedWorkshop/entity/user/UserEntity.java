@@ -1,5 +1,7 @@
-package com.sewing.unnamedWorkshop.entity;
+package com.sewing.unnamedWorkshop.entity.user;
 
+import com.sewing.unnamedWorkshop.entity.order.DeliveryService;
+import com.sewing.unnamedWorkshop.entity.order.BucketEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
@@ -11,18 +13,19 @@ import org.hibernate.validator.constraints.Length;
 
 import java.sql.Date;
 import java.sql.Timestamp;
-import java.util.UUID;
 
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-@Table(name = "users")
+@Table(name = "Користувачі")
 public class UserEntity {
+    private static final String SEQ_NAME = "user_seq";
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_NAME)
+    @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME, allocationSize = 1)
+    private Long id;
 
     @CreationTimestamp
     @Column(name = "Створено")
@@ -74,4 +77,12 @@ public class UserEntity {
 
     @Column(name = "Відділення")
     private String department;
+    @Column(name = "Архівовано")
+    private boolean archive;
+    @Column(name = "Роль")
+    @Enumerated (EnumType.STRING)
+    private Role role;
+
+    @OneToOne(cascade = CascadeType.REMOVE)
+    private BucketEntity bucket;
     }
