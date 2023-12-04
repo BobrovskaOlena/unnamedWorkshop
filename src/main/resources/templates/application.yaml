@@ -4,7 +4,7 @@ spring:
       ddl-auto: create-drop
     show-sql: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/shop
+    url: jdbc:postgresql://localhost:32768/shop
     username: admin
     password: 281998
   flyway:

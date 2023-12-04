@@ -1,6 +1,5 @@
 package com.sewing.unnamedWorkshop.entity.compositionOfMaterials;
 
-import com.sewing.unnamedWorkshop.entity.compositionOfMaterials.MaterialsCategoryEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
