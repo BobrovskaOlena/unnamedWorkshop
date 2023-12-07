@@ -20,25 +20,30 @@ import java.util.List;
 @Entity
 @Table(name = "Замовлення")
 public class OrderEntity {
-    private static final String SEQ_NAME = "order_seq";
+    private static final String SEQ_NAME = "замовлення_seq";
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_NAME)
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME, allocationSize = 1)
     private Long id;
+    @Column(name = "Створено")
     @CreationTimestamp
     private LocalDateTime created;
+    @Column(name = "Оновлено")
     @UpdateTimestamp
     private LocalDateTime updated;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "id_користувача")
     private UserEntity user;
-
+    @Column(name = "Сума")
     private BigDecimal sum;
+    @Column(name = "Адреса")
     private String address;
     @Enumerated(EnumType.STRING)
+    @Column(name = "Служба доставки")
     private DeliveryService deliveryService;
     @OneToMany(cascade = CascadeType.ALL)
     private List<OrderDetailsEntity> details;
+    @Column(name = "Статус замовленння")
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 }

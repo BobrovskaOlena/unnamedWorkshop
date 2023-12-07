@@ -11,14 +11,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name="MaterialsCategory")
+@Table(name="Категорії_матеріалів")
 public class MaterialsCategoryEntity {
-    private static final String SEQ_NAME = "materials_category_seq";
+    private static final String SEQ_NAME = "категорії_матеріалів_seq";
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_NAME)
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME,allocationSize = 1)
     private Long id;
     @Enumerated(EnumType.STRING)
-    @Column(name = "titleOfCategoryOfMaterials")
+    @Column(name = "Назва_категорії_матеріалів")
     private MaterialCategory title;
 }

@@ -36,6 +36,7 @@ public class ProductEntity {
 
     @Column(name = "Необхідні матеріали")
     private String materials;
+
     @Column(name = "Артикль_матеріалу")
     private String articleOfMaterials;
 
@@ -43,7 +44,6 @@ public class ProductEntity {
     private double fabricQuantity;
 
     @ManyToMany(cascade = CascadeType.ALL)
-
     @JoinTable(name = "products_categories", joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     private List<CategoryEntity> categories;

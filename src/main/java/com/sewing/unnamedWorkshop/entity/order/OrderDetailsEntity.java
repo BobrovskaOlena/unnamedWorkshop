@@ -16,17 +16,17 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "Деталі замовлення")
 public class OrderDetailsEntity {
-    private static final String SEQ_NAME = "details_seq";
+    private static final String SEQ_NAME = "деталі_seq";
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_NAME)
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME, allocationSize = 1)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "id_замовлення")
     private OrderEntity order;
     @ManyToOne
-    @JoinColumn(name = "product_id")
+    @JoinColumn(name = "id_продукта")
     private ProductEntity product;
     @Column(name = "Кількість")
     private BigDecimal amount;
