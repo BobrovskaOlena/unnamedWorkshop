@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @AllArgsConstructor
@@ -25,7 +26,7 @@ public class MaterialsEntity {
     private String title;
 
     @Column(name = "Кількість_матеріалу")
-    private String amountOfMaterial;
+    private BigDecimal amountOfMaterial;
 
     @ManyToMany
     @JoinTable(name = "Матеріали_по_категоріям", joinColumns = @JoinColumn(name = "id_матеріалу"),

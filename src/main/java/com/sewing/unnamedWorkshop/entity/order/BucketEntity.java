@@ -22,12 +22,13 @@ public class BucketEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_NAME)
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME, allocationSize = 1)
     private Long id;
+
     @OneToOne
     @JoinColumn(name = "id_користувача")
     private UserEntity user;
 
     @ManyToMany
     @JoinTable(name = "Продукти_в_кошику", joinColumns = @JoinColumn(name = "id_кошика"),
-    inverseJoinColumns = @JoinColumn(name = "id_продукта"))
+            inverseJoinColumns = @JoinColumn(name = "id_продукта"))
     private List<ProductEntity> product;
 }
