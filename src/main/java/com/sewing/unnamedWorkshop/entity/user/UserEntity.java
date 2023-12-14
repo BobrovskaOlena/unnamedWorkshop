@@ -18,7 +18,7 @@ import java.sql.Timestamp;
 @Builder(toBuilder = true)
 @Table(name = "Користувачі")
 public class UserEntity {
-    private static final String SEQ_NAME = "user_seq";
+    private static final String SEQ_NAME = "користувач_seq";
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_NAME)
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME, allocationSize = 1)
@@ -49,7 +49,7 @@ public class UserEntity {
     @Column(name = "По-батькові")
     private String middleName;
 
-    @Column(name = "Дата народження")
+    @Column(name = "Дата_народження")
     private Date dateOfBirth;
 
     @Column(name = "Телефон")
@@ -58,11 +58,11 @@ public class UserEntity {
     @Column(name = "Місто")
     private String city;
 
-    @Column(name = "Поштовий індекс")
+    @Column(name = "Поштовий_індекс")
     private String post;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "Служба доставки")
+    @Column(name = "Служба_доставки")
     private DeliveryService deliveryService;
 
     @Column(name = "Відділення")

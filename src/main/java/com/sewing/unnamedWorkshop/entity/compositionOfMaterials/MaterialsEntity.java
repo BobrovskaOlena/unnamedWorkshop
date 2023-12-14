@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @Entity
 @Builder
-@Table(name = "Матеріали для виробів")
+@Table(name = "Матеріали_для_виробів")
 public class MaterialsEntity {
     private static final String SEQ_NAME = "матеріали_seq";
     @Id
@@ -21,10 +21,10 @@ public class MaterialsEntity {
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME, allocationSize = 1)
     private Long id;
 
-    @Column(name = "Назва матеріалу", nullable = false)
+    @Column(name = "Назва_матеріалу", nullable = false)
     private String title;
 
-    @Column(name = "Кількість матеріалу")
+    @Column(name = "Кількість_матеріалу")
     private String amountOfMaterial;
 
     @ManyToMany
@@ -32,6 +32,6 @@ public class MaterialsEntity {
             inverseJoinColumns = @JoinColumn(name = "id_категорії"))
     private List<MaterialsCategoryEntity> categoriesMaterial;
 
-    @Column(name = "Чи є в наявності")
+    @Column(name = "Чи_є_в_наявності")
     private boolean status;
 }

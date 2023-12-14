@@ -39,11 +39,11 @@ public class OrderEntity {
     @Column(name = "Адреса")
     private String address;
     @Enumerated(EnumType.STRING)
-    @Column(name = "Служба доставки")
+    @Column(name = "Служба_доставки")
     private DeliveryService deliveryService;
     @OneToMany(cascade = CascadeType.ALL)
     private List<OrderDetailsEntity> details;
-    @Column(name = "Статус замовленння")
+    @Column(name = "Статус_замовленння")
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 }

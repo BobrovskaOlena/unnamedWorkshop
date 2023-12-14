@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "Деталі замовлення")
+@Table(name = "Деталі_замовлення")
 public class OrderDetailsEntity {
     private static final String SEQ_NAME = "деталі_seq";
     @Id

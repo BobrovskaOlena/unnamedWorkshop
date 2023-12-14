@@ -11,14 +11,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name="Категорія виробу")
+@Table(name="Категорія_виробу")
 public class CategoryEntity {
-    private static final String SEQ_NAME = "category_seq";
+    private static final String SEQ_NAME = "категорія_seq";
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_NAME)
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME,allocationSize = 1)
     private Long id;
-    @Column(name = "Назва категорії виробу")
+    @Column(name = "Назва_категорії_виробу")
     private String title;
 
 }
